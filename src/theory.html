@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Theory</title>
+    <style>
+      #loader {
+        transition: all 0.3s ease-in-out;
+        opacity: 1;
+        visibility: visible;
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        background: #fff;
+        z-index: 90000;
+      }
+
+      #loader.fadeOut {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+
+
+      .spinner {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: calc(50% - 20px);
+        left: calc(50% - 20px);
+        background-color: #333;
+        border-radius: 100%;
+        -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+        animation: sk-scaleout 1.0s infinite ease-in-out;
+      }
+
+      @-webkit-keyframes sk-scaleout {
+        0% { -webkit-transform: scale(0) }
+        100% {
+          -webkit-transform: scale(1.0);
+          opacity: 0;
+        }
+      }
+
+      @keyframes sk-scaleout {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        } 100% {
+          -webkit-transform: scale(1.0);
+          transform: scale(1.0);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body class="app">
+    <!-- @TOC -->
+    <!-- =================================================== -->
+    <!--
+      + @Page Loader
+      + @App Content
+          - #Left Sidebar
+              > $Sidebar Header
+              > $Sidebar Menu
+
+          - #Main
+              > $Topbar
+              > $App Screen Content
+    -->
+
+    <!-- @Page Loader -->
+    <!-- =================================================== -->
+    <div id='loader'>
+      <div class="spinner"></div>
+    </div>
+
+    <script>
+      window.addEventListener('load', function load() {
+        const loader = document.getElementById('loader');
+        setTimeout(function() {
+            loader.classList.add('fadeOut');
+        }, 300);
+      });
+    </script>
+
+    <!-- @App Content -->
+    <!-- =================================================== -->
+    <div>
+      <!-- #Left Sidebar ==================== -->
+      <div class="sidebar">
+        <div class="sidebar-inner">
+          <!-- ### $Sidebar Header ### -->
+          <div class="sidebar-logo">
+            <div class="peers ai-c fxw-nw">
+              <div class="peer peer-greed">
+                <a class="sidebar-link td-n" href="index.html">
+                  <div class="peers ai-c fxw-nw">
+                    <div class="peer">
+                      <div class="logo">
+                        <img src="assets/static/images/logo.svg" alt="">
+                      </div>
+                    </div>
+                    <div class="peer peer-greed">
+                      <h5 class="lh-1 mB-0 logo-text">实训台智能教学系统</h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="peer">
+                <div class="mobile-toggle sidebar-toggle">
+                  <a href="" class="td-n">
+                    <i class="ti-arrow-circle-left"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ### $Sidebar Menu ### -->
+          <ul class="sidebar-menu scrollable pos-r">
+              <li class="nav-item mT-30">
+                <a class="sidebar-link" href="index.html">
+                  <span class="icon-holder">
+                    <i class="c-blue-500 ti-home"></i>
+                  </span>
+                  <span class="title">主页</span>
+                </a>
+              </li>
+          		<li class="nav-item dropdown">
+          		  <a class="dropdown-toggle" href="javascript:void(0);">
+          		    <span class="icon-holder">
+          		        <i class="c-red-500 ti-plug"></i>
+          		      </span>
+          		    <span class="title">交直流充电智能实训台智能教学系统</span>
+          		    <span class="arrow">
+          		        <i class="ti-angle-right"></i>
+          		      </span>
+          		  </a>
+          			<ul class="dropdown-menu">
+          				<li>
+          					<a class='sidebar-link' href="theory.html">理论模块</a>
+          				</li>                 
+          				<li>
+          					<a class='sidebar-link' href="prac.html">实训模块</a>
+          				</li> 
+          				<li>
+          					<a class='sidebar-link' href="exam.html">考试模块</a>
+          				</li> 
+          			</ul>
+          		</li>
+          		<!-- <li class="nav-item dropdown">
+          		  <a class="dropdown-toggle" href="javascript:void(0);">
+          		    <span class="icon-holder">
+          		      <i class="c-red-500 ti-signal"></i>
+          		    </span>
+          		    <span class="title">驱动控制策略实训台智能教学系统</span>
+          		    <span class="arrow">
+          		        <i class="ti-angle-right"></i>
+          		      </span>
+          		  </a>
+          			<ul class="dropdown-menu">
+          				<li>
+          					<a class='sidebar-link' href="theorycopy.html">理论模块</a>
+          				</li>                 
+          				<li>
+          					<a class='sidebar-link' href="index.html">实训模块</a>
+          				</li> 
+          				<li>
+          					<a class='sidebar-link' href="exam.html">考试模块</a>
+          				</li> 
+          			</ul>
+          		</li> -->
+            </ul>
+          </div>
+      </div>
+
+      <!-- #Main ============================ -->
+      <div class="page-container">
+        <!-- ### $Topbar ### -->
+        <div class="header navbar">
+          <div class="header-container">
+            <ul class="nav-left">
+              <li>
+                <a id='sidebar-toggle' class="sidebar-toggle" href="javascript:void(0);">
+                  <i class="ti-menu"></i>
+                </a>
+              </li>
+              <li class="search-box">
+                <a class="search-toggle no-pdd-right" href="javascript:void(0);">
+                  <i class="search-icon ti-search pdd-right-10"></i>
+                  <i class="search-icon-close ti-close pdd-right-10"></i>
+                </a>
+              </li>
+              <li class="search-input">
+                <input class="form-control" type="text" placeholder="Search...">
+              </li>
+            </ul>
+            <ul class="nav-right">
+              <li class="notifications dropdown">
+                <span class="counter bgc-red">3</span>
+                <a href="" class="dropdown-toggle no-after" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="ti-bell"></i>
+                </a>
+
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <li class="pX-20 pY-15 bdB">
+                    <i class="ti-bell pR-10"></i>
+                    <span class="fsz-sm fw-600 c-grey-900">Notifications</span>
+                  </li>
+                  <li>
+                    <ul class="ovY-a pos-r scrollable lis-n p-0 m-0 fsz-sm">
+                      <li>
+                        <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
+                          <div class="peer mR-15">
+                           <!-- <img class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/1.jpg" alt=""> -->
+                          </div>
+                          <div class="peer peer-greed">
+                            <span>
+                              <span class="fw-500">小智同学</span>
+                              <span class="c-grey-600">向你发送消息 <span class="text-dark"></span>
+                              </span>
+                            </span>
+                            <p class="m-0">
+                              <small class="fsz-xs">5 mins ago</small>
+                            </p>
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="pX-20 pY-15 ta-c bdT">
+                    <span>
+                      <a href="" class="c-grey-600 cH-blue fsz-sm td-n">View All Notifications <i class="ti-angle-right fsz-xs mL-10"></i></a>
+                    </span>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                  <div class="peer mR-10">
+                    <img class="w-2r bdrs-50p" src="./assets/static/images/user.png" alt="">
+                  </div>
+                  <div class="peer">
+                    <span class="fsz-sm c-grey-900">小智同学</span>
+                  </div>
+                </a>
+                <ul class="dropdown-menu fsz-sm" aria-labelledby="dropdownMenuLink">
+                  <li>
+                    <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+                      <i class="ti-settings mR-10"></i>
+                      <span>Setting</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+                      <i class="ti-user mR-10"></i>
+                      <span>Profile</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="email.html" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+                      <i class="ti-email mR-10"></i>
+                      <span>Messages</span>
+                    </a>
+                  </li>
+                  <li role="separator" class="divider"></li>
+                  <li>
+                    <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+                      <i class="ti-power-off mR-10"></i>
+                      <span>Logout</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ### $App Screen Content ### -->
+        <main class='main-content bgc-grey-100'>
+          <div id='mainContent'>
+            <div class="row gap-20 masonry pos-r">
+							<div class="masonry-item  w-100">
+								<div class="row gap-20">
+							    <!-- #Toatl Visits ==================== -->
+							    <div class='col-md-5'>
+							      <div class="layers bd bgc-white p-20">
+							        <div class="layer w-100">
+							          <h5 class="lh-1">交直流充电智能实训台智能教学系统</h5>
+							        </div>
+							      </div>
+							    </div>
+									<div class='col-md-2'>
+									  <div class="layers bd bgc-white p-20">
+									    <div class="layer w-100">
+									      <h5 class="lh-1">理论模块</h5>
+									    </div>
+									  </div>
+									</div>
+							  </div>
+							</div>
+							<div class="masonry-sizer col-md-6"></div>
+							<div class="masonry-item col-md-6">
+								<!-- #Sales Report ==================== -->
+								<div class="bd bgc-white">
+									<div class="layers">
+										<div class="layer w-100 p-20">
+											<h6 class="lh-1">NO. 1</h6>
+										</div>
+										<div class="layer w-100">
+											<div class="sales-report-header p-10">
+												<div class="peers ai-c jc-sb gap-40">
+													<div class="peer peer-greed">
+														<h5>第一章</h5>
+														<p class="mB-0">充电桩基础知识学习资料1</p>
+													</div>
+													<div class="peer">
+														<h3 class="text-end">2</h3>
+													</div>
+												</div>
+											</div>
+											<div class="table-responsive p-20">
+												<table class="table">
+													<thead>
+														<tr>
+															<th class=" bdwT-0">文件名</th>
+															<th class=" bdwT-0">文件类型</th>
+															<th class=" bdwT-0">下载/查看</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td class="fw-600">充电桩基础知识学习资料1</td>
+															<td><span class="badge bgc-red-50 c-red-700 p-10 lh-0 tt-c rounded-pill">.PDF</span> </td>
+															<td class="icons-cell">
+																<a id="openPdf1" style="cursor:pointer;">
+																	<span class="icon-holder"><i class="c-red-500 ti-download"></i></span>
+																</a>
+																<span class="divider">/</span>
+																<span class="icon-holder"><i class="c-blue-600 ti-layout-slider"></i></span>
+															</td>
+														</tr>
+														<tr>
+															<td class="fw-600">幻灯片-充电桩基础知识学习资料1</td>
+															<td><span class="badge bgc-deep-purple-50 c-deep-purple-700 p-10 lh-0 tt-c rounded-pill">.PPTX</span></td>
+															<td class="icons-cell">
+																<span class="icon-holder"><i class="c-red-500 ti-download"></i></span>
+																<span class="divider">/</span>
+																<span class="icon-holder"><i class="c-blue-600 ti-layout-slider"></i></span>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											 </div>
+										</div>
+									</div>
+									<div class="ta-c bdT w-100 p-20">
+										<a href="#">进入章节</a>
+									</div>
+								</div>
+							</div>
+							<div class="masonry-item col-md-6">
+									<!-- #Sales Report ==================== -->
+									<div class="bd bgc-white">
+										<div class="layers">
+											<div class="layer w-100 p-20">
+												<h6 class="lh-1">NO. 2</h6>
+											</div>
+											<div class="layer w-100">
+												<div class="sales-report-header p-10">
+													<div class="peers ai-c jc-sb gap-40">
+														<div class="peer peer-greed">
+															<h5>第二章</h5>
+															<p class="mB-0">充电桩基础知识学习资料2</p>
+														</div>
+														<div class="peer">
+															<h3 class="text-end">2</h3>
+														</div>
+													</div>
+												</div>
+												<div class="table-responsive p-20">
+													<table class="table">
+														<thead>
+															<tr>
+																<th class=" bdwT-0">文件名</th>
+																<th class=" bdwT-0">文件类型</th>
+																<th class=" bdwT-0">下载/查看</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td class="fw-600">充电桩基础知识学习资料2</td>
+																<td><span class="badge bgc-red-50 c-red-700 p-10 lh-0 tt-c rounded-pill">.PDF</span> </td>
+																<td class="icons-cell">
+																	<a id="openPdf2" style="cursor:pointer;">
+																		<span class="icon-holder"><i class="c-red-500 ti-download"></i></span>
+																	</a>
+																	<span class="divider">/</span>
+																	<span class="icon-holder"><i class="c-blue-600 ti-layout-slider"></i></span>
+																</td>
+															</tr>
+															<tr>
+																<td class="fw-600">幻灯片-充电桩基础知识学习资料2</td>
+																<td><span class="badge bgc-deep-purple-50 c-deep-purple-700 p-10 lh-0 tt-c rounded-pill">.PPTX</span></td>
+																<td class="icons-cell">
+																	<span class="icon-holder"><i class="c-red-500 ti-download"></i></span>
+																	<span class="divider">/</span>
+																	<span class="icon-holder"><i class="c-blue-600 ti-layout-slider"></i></span>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												 </div>
+											</div>
+										</div>
+										<div class="ta-c bdT w-100 p-20">
+											<a href="#">进入章节</a>
+										</div>
+									</div>
+								</div>
+							
+							<div class="masonry-item col-md-6">
+								<!-- #Sales Report ==================== -->
+								<div class="bd bgc-white">
+									<div class="layers">
+										<div class="layer w-100 p-20">
+											<h6 class="lh-1">NO. 3</h6>
+										</div>
+										<div class="layer w-100">
+											<div class="sales-report-header p-10">
+												<div class="peers ai-c jc-sb gap-40">
+													<div class="peer peer-greed">
+														<h5>第三章</h5>
+														<p class="mB-0">充电桩基础知识学习资料3</p>
+													</div>
+													<div class="peer">
+														<h3 class="text-end">2</h3>
+													</div>
+												</div>
+											</div>
+											<div class="table-responsive p-20">
+												<table class="table">
+													<thead>
+														<tr>
+															<th class=" bdwT-0">文件名</th>
+															<th class=" bdwT-0">文件类型</th>
+															<th class=" bdwT-0">下载/查看</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td class="fw-600">充电桩基础知识学习资料3</td>
+															<td><span class="badge bgc-red-50 c-red-700 p-10 lh-0 tt-c rounded-pill">.PDF</span> </td>
+															<td class="icons-cell">
+																<a id="openPdf3" style="cursor:pointer;">
+																	<span class="icon-holder"><i class="c-red-500 ti-download"></i></span>
+																</a>
+																<span class="divider">/</span>
+																<span class="icon-holder"><i class="c-blue-600 ti-layout-slider"></i></span>
+															</td>
+														</tr>
+														<tr>
+															<td class="fw-600">幻灯片-充电桩基础知识学习资料3</td>
+															<td><span class="badge bgc-deep-purple-50 c-deep-purple-700 p-10 lh-0 tt-c rounded-pill">.PPTX</span></td>
+															<td class="icons-cell">
+																<span class="icon-holder"><i class="c-red-500 ti-download"></i></span>
+																<span class="divider">/</span>
+																<span class="icon-holder"><i class="c-blue-600 ti-layout-slider"></i></span>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											 </div>
+										</div>
+									</div>
+									<div class="ta-c bdT w-100 p-20">
+										<a href="#">进入章节</a>
+									</div>
+								</div>
+							</div>
+							<div class="masonry-item col-md-6">
+								<!-- #Sales Report ==================== -->
+								<div class="bd bgc-white">
+									<div class="layers">
+										<div class="layer w-100 p-20">
+											<h6 class="lh-1">NO. 4</h6>
+										</div>
+										<div class="layer w-100">
+											<div class="sales-report-header p-10">
+												<div class="peers ai-c jc-sb gap-40">
+													<div class="peer peer-greed">
+														<h5>第四章</h5>
+														<p class="mB-0">充电桩基础知识学习资料4</p>
+													</div>
+													<div class="peer">
+														<h3 class="text-end">2</h3>
+													</div>
+												</div>
+											</div>
+											<div class="table-responsive p-20">
+												<table class="table">
+													<thead>
+														<tr>
+															<th class=" bdwT-0">文件名</th>
+															<th class=" bdwT-0">文件类型</th>
+															<th class=" bdwT-0">下载/查看</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td class="fw-600">充电桩基础知识学习资料4</td>
+															<td><span class="badge bgc-red-50 c-red-700 p-10 lh-0 tt-c rounded-pill">.PDF</span> </td>
+															<td class="icons-cell">
+																<a id="openPdf4" style="cursor:pointer;">
+																	<span class="icon-holder"><i class="c-red-500 ti-download"></i></span>
+																</a>
+																<span class="divider">/</span>
+																<span class="icon-holder"><i class="c-blue-600 ti-layout-slider"></i></span>
+															</td>
+														</tr>
+														<tr>
+															<td class="fw-600">幻灯片-充电桩基础知识学习资料4</td>
+															<td><span class="badge bgc-deep-purple-50 c-deep-purple-700 p-10 lh-0 tt-c rounded-pill">.PPTX</span></td>
+															<td class="icons-cell">
+																<span class="icon-holder"><i class="c-red-500 ti-download"></i></span>
+																<span class="divider">/</span>
+																<span class="icon-holder"><i class="c-blue-600 ti-layout-slider"></i></span>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											 </div>
+										</div>
+									</div>
+									<div class="ta-c bdT w-100 p-20">
+										<a href="#">进入章节</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+        </main>
+
+        <!-- ### $App Screen Footer ### -->
+        <footer class="bdT ta-c p-30 lh-0 fsz-sm c-grey-600">
+          <span>Copyright © 2025 Designed by XXX. All rights reserved.</span>
+        </footer>
+      </div>
+    </div>
+		
+  </body>
+	<script>
+	  const btn1 = document.getElementById('openPdf1');
+	  btn1.addEventListener('click', () => {
+	    window.electronAPI.openPDF('充电桩基础知识学习资料1.pdf');
+	  });
+		const btn2 = document.getElementById('openPdf2');
+		btn2.addEventListener('click', () => {
+		  window.electronAPI.openPDF('充电桩基础知识学习资料2.pdf');
+		});
+		const btn3 = document.getElementById('openPdf3');
+		btn3.addEventListener('click', () => {
+		  window.electronAPI.openPDF('充电桩基础知识学习资料3.pdf');
+		});
+		const btn4 = document.getElementById('openPdf4');
+		btn4.addEventListener('click', () => {
+		  window.electronAPI.openPDF('充电桩基础知识学习资料4.pdf');
+		});
+	</script>
+</html>
+
+

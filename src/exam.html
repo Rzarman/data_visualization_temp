@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Exam</title>
+    <style>
+      #loader {
+        transition: all 0.3s ease-in-out;
+        opacity: 1;
+        visibility: visible;
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        background: #fff;
+        z-index: 90000;
+      }
+
+      #loader.fadeOut {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+
+
+      .spinner {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: calc(50% - 20px);
+        left: calc(50% - 20px);
+        background-color: #333;
+        border-radius: 100%;
+        -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+        animation: sk-scaleout 1.0s infinite ease-in-out;
+      }
+
+      @-webkit-keyframes sk-scaleout {
+        0% { -webkit-transform: scale(0) }
+        100% {
+          -webkit-transform: scale(1.0);
+          opacity: 0;
+        }
+      }
+
+      @keyframes sk-scaleout {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        } 100% {
+          -webkit-transform: scale(1.0);
+          transform: scale(1.0);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body class="app">
+    <!-- @TOC -->
+    <!-- =================================================== -->
+    <!--
+      + @Page Loader
+      + @App Content
+          - #Left Sidebar
+              > $Sidebar Header
+              > $Sidebar Menu
+
+          - #Main
+              > $Topbar
+              > $App Screen Content
+    -->
+
+    <!-- @Page Loader -->
+    <!-- =================================================== -->
+    <div id='loader'>
+      <div class="spinner"></div>
+    </div>
+
+    <script>
+      window.addEventListener('load', function load() {
+        const loader = document.getElementById('loader');
+        setTimeout(function() {
+            loader.classList.add('fadeOut');
+        }, 300);
+      });
+    </script>
+
+    <!-- @App Content -->
+    <!-- =================================================== -->
+    <div>
+      <!-- #Left Sidebar ==================== -->
+      <div class="sidebar">
+        <div class="sidebar-inner">
+          <!-- ### $Sidebar Header ### -->
+          <div class="sidebar-logo">
+            <div class="peers ai-c fxw-nw">
+              <div class="peer peer-greed">
+                <a class="sidebar-link td-n" href="index.html">
+                  <div class="peers ai-c fxw-nw">
+                    <div class="peer">
+                      <div class="logo">
+                        <img src="assets/static/images/logo.svg" alt="">
+                      </div>
+                    </div>
+                    <div class="peer peer-greed">
+                      <h5 class="lh-1 mB-0 logo-text">实训台智能教学系统</h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="peer">
+                <div class="mobile-toggle sidebar-toggle">
+                  <a href="" class="td-n">
+                    <i class="ti-arrow-circle-left"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ### $Sidebar Menu ### -->
+          <ul class="sidebar-menu scrollable pos-r">
+              <li class="nav-item mT-30">
+                <a class="sidebar-link" href="index.html">
+                  <span class="icon-holder">
+                    <i class="c-blue-500 ti-home"></i>
+                  </span>
+                  <span class="title">主页</span>
+                </a>
+              </li>
+          		<li class="nav-item dropdown">
+          		  <a class="dropdown-toggle" href="javascript:void(0);">
+          		    <span class="icon-holder">
+          		        <i class="c-red-500 ti-plug"></i>
+          		      </span>
+          		    <span class="title">交直流充电智能实训台智能教学系统</span>
+          		    <span class="arrow">
+          		        <i class="ti-angle-right"></i>
+          		      </span>
+          		  </a>
+          			<ul class="dropdown-menu">
+          				<li>
+          					<a class='sidebar-link' href="theory.html">理论模块</a>
+          				</li>                 
+          				<li>
+          					<a class='sidebar-link' href="prac.html">实训模块</a>
+          				</li> 
+          				<li>
+          					<a class='sidebar-link' href="">考试模块</a>
+          				</li> 
+          			</ul>
+          		</li>
+          		<!-- <li class="nav-item dropdown">
+          		  <a class="dropdown-toggle" href="javascript:void(0);">
+          		    <span class="icon-holder">
+          		      <i class="c-red-500 ti-signal"></i>
+          		    </span>
+          		    <span class="title">驱动控制策略实训台智能教学系统</span>
+          		    <span class="arrow">
+          		        <i class="ti-angle-right"></i>
+          		      </span>
+          		  </a>
+          			<ul class="dropdown-menu">
+          				<li>
+          					<a class='sidebar-link' href="theorycopy.html">理论模块</a>
+          				</li>                 
+          				<li>
+          					<a class='sidebar-link' href="indexk.html">实训模块</a>
+          				</li> 
+          				<li>
+          					<a class='sidebar-link' href="">考试模块</a>
+          				</li> 
+          			</ul>
+          		</li> -->
+							
+            </ul>
+          </div>
+      </div>
+
+      <!-- #Main ============================ -->
+      <div class="page-container">
+        <!-- ### $Topbar ### -->
+        <div class="header navbar">
+          <div class="header-container">
+            <ul class="nav-left">
+              <li>
+                <a id='sidebar-toggle' class="sidebar-toggle" href="javascript:void(0);">
+                  <i class="ti-menu"></i>
+                </a>
+              </li>
+              <li class="search-box">
+                <a class="search-toggle no-pdd-right" href="javascript:void(0);">
+                  <i class="search-icon ti-search pdd-right-10"></i>
+                  <i class="search-icon-close ti-close pdd-right-10"></i>
+                </a>
+              </li>
+              <li class="search-input">
+                <input class="form-control" type="text" placeholder="Search...">
+              </li>
+            </ul>
+            <ul class="nav-right">
+              <li class="notifications dropdown">
+                <span class="counter bgc-red">3</span>
+                <a href="" class="dropdown-toggle no-after" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="ti-bell"></i>
+                </a>
+
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <li class="pX-20 pY-15 bdB">
+                    <i class="ti-bell pR-10"></i>
+                    <span class="fsz-sm fw-600 c-grey-900">Notifications</span>
+                  </li>
+                  <li>
+                    <ul class="ovY-a pos-r scrollable lis-n p-0 m-0 fsz-sm">
+                      <li>
+                        <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
+                          <div class="peer mR-15">
+                           <!-- <img class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/1.jpg" alt=""> -->
+                          </div>
+                          <div class="peer peer-greed">
+                            <span>
+                              <span class="fw-500">小智同学</span>
+                              <span class="c-grey-600">向你发送消息 <span class="text-dark"></span>
+                              </span>
+                            </span>
+                            <p class="m-0">
+                              <small class="fsz-xs">5 mins ago</small>
+                            </p>
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="pX-20 pY-15 ta-c bdT">
+                    <span>
+                      <a href="" class="c-grey-600 cH-blue fsz-sm td-n">View All Notifications <i class="ti-angle-right fsz-xs mL-10"></i></a>
+                    </span>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                  <div class="peer mR-10">
+                    <img class="w-2r bdrs-50p" src="./assets/static/images/user.png" alt="">
+                  </div>
+                  <div class="peer">
+                    <span class="fsz-sm c-grey-900">小智同学</span>
+                  </div>
+                </a>
+                <ul class="dropdown-menu fsz-sm" aria-labelledby="dropdownMenuLink">
+                  <li>
+                    <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+                      <i class="ti-settings mR-10"></i>
+                      <span>Setting</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+                      <i class="ti-user mR-10"></i>
+                      <span>Profile</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="email.html" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+                      <i class="ti-email mR-10"></i>
+                      <span>Messages</span>
+                    </a>
+                  </li>
+                  <li role="separator" class="divider"></li>
+                  <li>
+                    <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+                      <i class="ti-power-off mR-10"></i>
+                      <span>Logout</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ### $App Screen Content ### -->
+        <main class='main-content bgc-grey-100'>
+          <div id='mainContent'>
+            <div class="row gap-20 masonry pos-r">
+							<div class="masonry-item w-100" >
+								<div class="row gap-20">
+							    <!-- #Toatl Visits ==================== -->
+							    <div class='col-md-5'>
+							      <div class="layers bd bgc-white p-20">
+							        <div class="layer w-100">
+							          <h5 class="lh-1">交直流充电智能实训台智能教学系统</h5>
+							        </div>
+							      </div>
+							    </div>
+									<div class='col-md-2'>
+									  <div class="layers bd bgc-white p-20">
+									    <div class="layer w-100">
+									      <h5 class="lh-1">考试模块</h5>
+									    </div>
+									  </div>
+									</div>
+<!-- 									<div class='col-md-5'>
+									  <div class="layers bd bgc-white p-20">
+									    <div class="layer w-100 d-flex align-items-center justify-content-between">
+									      <h6 class="c-grey-900">进度</h6>
+												<div class="progress flex-grow-1 mx-2">
+												  <div class="progress-bar bgc-green-700" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:60%;"> <span class="visually-hidden">60% Complete</span></div>
+												</div>
+												<span class="pull-left c-grey-600 fsz-sm">60%</span>
+									    </div>
+									  </div>
+									</div> -->
+							  </div>
+							</div>
+							
+							<div class="masonry-item col-12">
+							  <!-- #Answer box ==================== -->
+							  <div class="bd bgc-white">
+							    <div class="peers fxw-nw@lg+ ai-s">
+							      <div class="peer peer-greed w-70p@lg+ w-100@lg- p-20">
+							        <div class="layers">
+							          <div class="layer w-100 mB-10">
+							            <h6 class="lh-1">答题框</h6>
+							          </div>
+							          <div class="layer w-100 d-flex gap-10">
+													<div class="w-55p" style="font-size:20px;">
+														1.直流充电桩（DC桩）与交流充电桩（AC桩）的主要区别是：
+													</div>
+													<div class="w-45p">
+														<form>
+														  <fieldset class="mb-3" style="font-size:18px;">
+														    <div class="row">
+														      <div class="col-sm-10">
+														        <div class="form-check">
+														          <label class="form-label form-check-label">
+														            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+														            A. DC桩输出直流电，AC桩输出交流电
+														          </label>
+														        </div>
+														        <div class="form-check">
+														          <label class="form-label form-check-label">
+														            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+														            B. DC桩充电速度通常较慢
+														          </label>
+														        </div>
+														        <div class="form-check">
+														          <label class="form-label form-check-label">
+														            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+														            C. AC桩直接为电池充电，无需车载充电机
+														          </label>
+														        </div>
+																		<div class="form-check">
+																		  <label class="form-label form-check-label">
+																		    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+																		    D. DC桩需要车载充电机进行整流 
+																		  </label>
+																		</div>
+																		
+														      </div>
+														    </div>
+														  </fieldset>
+														  
+														  <div class="row mb-3">
+														    <div class="col text-center">
+														      <button type="submit" class="btn btn-secondary btn-color" style="font-size: 14px;">上一题</button>
+														    </div>
+														    <div class="col text-center" >
+														      <button type="submit" class="btn btn-secondary btn-color" style="font-size: 14px;">下一题</button>
+														    </div>
+														    <div class="col text-center" >
+														      <button type="submit" class="btn btn-primary btn-color" style="font-size: 14px;">保存答案</button>
+														    </div>
+														  </div>
+														</form>
+													</div>
+							          </div>
+							        </div>
+							      </div>
+							      <div class="peer bdL p-20 w-30p@lg+ w-100p@lg-">
+							        <div class="layers">
+							          <div class="layer w-100">
+							            <!-- 答题进展 -->
+							            <div class="layers">
+							              <div class="gap-10 peers">
+							                <div class="peer">
+							                  <button type="button" class="btn cur-p btn-primary btn-color">1</button>
+							                </div>
+															<div class="peer">
+															  <button type="button" class="btn cur-p btn-primary btn-color">2</button>
+															</div>
+															<div class="peer">
+															  <button type="button" class="btn cur-p btn-primary btn-color">3</button>
+															</div>
+															<div class="peer">
+															  <button type="button" class="btn cur-p btn-primary btn-color">4</button>
+															</div>
+															<div class="peer">
+															  <button type="button" class="btn cur-p btn-primary btn-color">5</button>
+															</div>
+															<div class="peer">
+															  <button type="button" class="btn cur-p btn-primary btn-color">6</button>
+															</div>
+															<div class="peer">
+															  <button type="button" class="btn cur-p btn-primary btn-color">7</button>
+															</div>
+															<div class="peer">
+															  <button type="button" class="btn cur-p btn-primary btn-color">8</button>
+															</div>
+															<div class="peer">
+															  <button type="button" class="btn cur-p btn-primary btn-color">9</button>
+															</div>
+															<div class="peer">
+															  <button type="button" class="btn cur-p btn-primary btn-color">10</button>
+															</div>
+															<div class="peer">
+															  <button type="button" class="btn cur-p btn-primary btn-color">11</button>
+															</div>
+															<div class="peer">
+															  <button type="button" class="btn cur-p btn-primary btn-color">12</button>
+															</div>
+															<div class="peer">
+															  <button type="button" class="btn cur-p btn-outline-danger">13</button>
+															</div>
+															<div class="peer">
+															  <button type="button" class="btn cur-p btn-outline-danger">14</button>
+															</div>
+															<div class="peer">
+															  <button type="button" class="btn cur-p btn-outline-danger">15</button>
+															</div>
+															<div class="peer">
+															  <button type="button" class="btn cur-p btn-outline-danger">16</button>
+															</div>
+															<div class="peer">
+															  <button type="button" class="btn cur-p btn-outline-danger">17</button>
+															</div>
+															<div class="peer">
+															  <button type="button" class="btn cur-p btn-outline-danger">18</button>
+															</div>
+															<div class="peer">
+															  <button type="button" class="btn cur-p btn-outline-danger">19</button>
+															</div>
+															<div class="peer">
+															  <button type="button" class="btn cur-p btn-outline-danger">20</button>
+															</div>
+														</div>
+							            </div>
+							
+							            <!-- 提交答案 -->
+							            <div class="peers pT-20 mT-20 bdT fxw-nw@lg+ jc-sa ta-c gap-10">
+							              <div class="peer">
+							                <div class="easy-pie-chart" data-size='80' data-percent="60" data-bar-color='#ff9800'>
+							                  <span></span>
+							                </div>
+							                <h6 class="fsz-sm">答题进度</h6>
+							              </div>
+														<div class="peer">
+														  <button type="button" class="btn cur-p btn-outline-success">提交答案</button>
+														</div>
+							            </div>
+							          </div>
+							        </div>
+							      </div>
+							    </div>
+							  </div>
+							</div>
+							
+							<div class="masonry-sizer col-md-6"></div>
+							
+						</div>
+					</div>
+        </main>
+
+        <!-- ### $App Screen Footer ### -->
+<!--        <footer class="bdT ta-c p-30 lh-0 fsz-sm c-grey-600">
+          <span>Copyright © 2025 Designed by <a href="https://colorlib.com" target="_blank" rel="nofollow noopener noreferrer" title="Colorlib">Colorlib</a>. All rights reserved.</span>
+        </footer> -->
+      </div>
+    </div>
+  </body>
+</html>
